@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import cat from "../assets/img/cat.png";
+import arrow from "../assets/img/1.svg";
 import "./app.css";
 import { useGetCurencuQuery } from "../services/Currens";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { SerializedError } from "@reduxjs/toolkit";
 
 export interface IData {
   id: string;
@@ -42,15 +42,18 @@ export default function App() {
               terms
             </div>
           </div>
-          <select onChange={handelChange} name="select" title="v">
-            {data?.data.map((currenc) => (
-              <>
-                <option value={currenc.name} selected={currenc.id === "RUB"}>
-                  {currenc.id}
-                </option>
-              </>
-            ))}
-          </select>
+          <div className="select">
+            <img src={arrow} alt="arrow" />
+            <select onChange={handelChange} name="select" title="v">
+              {data?.data.map((currenc) => (
+                <>
+                  <option value={currenc.name} selected={currenc.id === "RUB"}>
+                    {currenc.id}
+                  </option>
+                </>
+              ))}
+            </select>
+          </div>
         </div>
         <img src={cat} alt="cat" />
       </div>

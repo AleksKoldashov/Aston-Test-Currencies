@@ -1,8 +1,8 @@
 .app{
-  /* width: 100%; */
+  width: 100%;
   margin: auto;
-  min-width: 283px;
-  max-width: 650px;
+  /* min-width: 283px;
+  max-width: 650px; */
   height: 100%;
 }
 .content{
@@ -29,18 +29,33 @@ align-items: center;
   font-size: 20px;
   margin-left: 10px;
 }
-select{
+/*  */
+.select {
+  position: relative;
+  display: inline-block;
+}
+
+[alt="arrow"]{
+  position: absolute;
+  top: 65px;
+  left: 155px;
+  z-index: 100;
+}
+select {
+  padding-right: 25px;
+  padding-left: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 181px;
   height: 43px;
   border-radius: 10px;
   border: 1px solid rgba(218, 214, 214, 1);
   box-shadow: 0px 4px 4px rgba(218, 214, 214, 1);
   margin-top: 50px;
+}
+/*  */
 
-}
-option{
-  border-bottom: 1px solid rgba(218, 214, 214, 1);
-}
 footer{
   position: relative;
   display: grid;
@@ -55,9 +70,94 @@ footer{
   align-items: center;
   color: white;
 }
-[alt='cat']{
-  position: relative;
-  top: 130px;
+@media   (min-width: 1501px) {
+  [alt='cat']{
+    position: relative;
+    top: 30px;
+    animation: moveUp5 1s ;
+  }
+}
+@keyframes moveUp5 {
+  0% {
+    top: 70px;
+      transform: translateY(0);
+  }
+  50% {
+    top: 30px;
+      transform: translateY(0);
+  }
+}
+@media   (min-width: 1201px) and (max-width: 1500px) {
+  [alt='cat']{
+    position: relative;
+    top: 70px;
+    animation: moveUp4 1s ;
+  }
+}
+@keyframes moveUp4 {
+  0% {
+    top: 100px;
+      transform: translateY(0);
+  }
+  50% {
+    top: 70px;
+      transform: translateY(0px); 
+  }
+}
+@media   (min-width: 801px) and (max-width: 1200px) {
+  [alt='cat']{
+    position: relative;
+    top: 100px;
+    animation: moveUp3 1s ;
+  }
+
+}
+@keyframes moveUp3 {
+  0% {
+    top: 130px;
+      transform: translateY(0);
+  }
+  50% {
+    top: 100px;
+      transform: translateY(0px); 
+  }
+}
+@media   (min-width: 651px) and (max-width: 800px) {
+  [alt='cat']{
+    position: relative;
+    top: 130px;
+    animation: moveUp2 1s ;
+  }
+}
+@keyframes moveUp2 {
+  0% {
+    top: 150px;
+      transform: translateY(0);
+  }
+  50% {
+    top: 130px;
+      transform: translateY(0px);
+  }
+}
+
+@media   (min-width: 450px) and (max-width: 650px) {
+  [alt='cat']{
+    position: relative;
+    top: 150px;
+    transform:  all 2.5s ease;
+    animation: moveUp 1s ;
+  }
+
+}
+@keyframes moveUp {
+  0% {
+    top: 170px;
+      transform: translateY(0); /* Начальное положение */
+  }
+  50% {
+    top: 150px;
+      transform: translateY(0px); /* Положение во время анимации */
+  }
 }
 @media (min-width: 283px) and ( max-width: 450px) {
   .left{
@@ -100,6 +200,12 @@ footer{
   [alt='cat']{
    display: none;
   }
+  [alt="arrow"]{
+    position: absolute;
+    top: 45px;
+    left: 155px;
+    z-index: 100;
+  }
 }
 @media screen and (max-width: 282px) {
   .left{
@@ -141,5 +247,11 @@ footer{
   }
   [alt='cat']{
    display: none;
+  }
+  [alt="arrow"]{
+    position: absolute;
+    top: 45px;
+    left: 155px;
+    z-index: 100;
   }
 }
